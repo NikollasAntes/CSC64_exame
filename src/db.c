@@ -18,9 +18,9 @@ int main() {
   // Define o seed para garantir a reproducibilidade
   srand(0);
 
-  FILE *fileA = fopen("A.txt", "w");
-  FILE *fileB = fopen("B.txt", "w");
-  FILE *id_file = fopen("ids.txt", "w");
+  FILE *fileA = fopen("../db/A.txt", "w");
+  FILE *fileB = fopen("../db/B.txt", "w");
+  FILE *id_file = fopen("../db/ids.txt", "w");
 
   if (!fileA || !fileB || !id_file) {
     fprintf(stderr, "Erro ao abrir os arquivos.\n");

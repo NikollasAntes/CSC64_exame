@@ -69,12 +69,12 @@ int main() {
     exit(1);
   }
 
-  load_records("A.txt", recordsA);
-  load_records("B.txt", recordsB);
-  load_ids("ids.txt", idsA); // Assuming ids are the same for both A and B
-  load_ids("ids.txt",idsB);
+  load_records("../db/A.txt", recordsA);
+  load_records("../db/B.txt", recordsB);
+  load_ids("../db/ids.txt", idsA); // Assuming ids are the same for both A and B
+  load_ids("../db/ids.txt",idsB);
 
-  FILE *output = fopen("output_seq.csv", "w");
+  FILE *output = fopen("../db/output_seq.csv", "w");
   if (!output) {
     fprintf(stderr, "Erro ao abrir o arquivo de saída.\n");
     free(recordsA);
@@ -146,8 +146,8 @@ int main() {
   // NOTE: This is a simplified approach; for large datasets, external sorting
   // would be more appropriate
   //system("sort -t, -k6 -n output.csv -o sorted_output.csv");
-  system("(head -n 1 output_seq.csv && tail -n +2 output_seq.csv | sort -t, -k6 -n) > sorted_output_seq.csv");
-  system("awk '!seen[$0]++' sorted_output_seq.csv > unique_sorted_seq.csv");
+  system("(head -n 1 ../db/output_seq.csv && tail -n +2 ../db/output_seq.csv | sort -t, -k6 -n) > ../db/sorted_output_seq.csv");
+  system("awk '!seen[$0]++' ../db/sorted_output_seq.csv > ../db/unique_sorted_seq.csv");
   // Descrição do comando:
   // sort: O comando para ordenar.
   // -t,: Define a vírgula (,) como delimitador de campo.

@@ -18,6 +18,8 @@ Em `recordsA`, são  ignorados registros com valores menores do que ou iguais a 
 
 Em `recordsB`, são ignorados valores com registros maiores do que ou iguais a 0.75.
 
+Além dos valores fora dos thresholds determinados, o valor máximo de `recordsA` e o valor mínimo de `recordsB` também são excluídos. Essa otimização evita prints duplicados.
+
 3. Combinação de registros
 
 A função `combine_ids` gera novos identificadores, com base em uma combinação dos Ids originais.

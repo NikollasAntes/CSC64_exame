@@ -71,11 +71,11 @@ int main() {
     fprintf(stderr, "Erro ao alocar memória.\n");
     exit(1);
   }
-  load_records("A.txt", recordsA);
-  load_records("B.txt", recordsB);
-  load_ids("ids.txt", ids); // Assuming ids are the same for both A and B
+  load_records("../db/A.txt", recordsA);
+  load_records("../db/B.txt", recordsB);
+  load_ids("../db/ids.txt", ids); // Assuming ids are the same for both A and B
   //load_ids("ids.txt",idsB);
-  FILE *output = fopen("output_ref3.csv", "w");
+  FILE *output = fopen("../db/output_ref3.csv", "w");
   if (!output) {
     fprintf(stderr, "Erro ao abrir o arquivo de saída.\n");
     free(recordsA);
@@ -147,7 +147,7 @@ int main() {
   // NOTE: This is a simplified approach; for large datasets, external sorting
   // would be more appropriate
   //system("sort -t, -k6 -n output_ref3.csv -o sorted_output_ref3.csv");
-  system("(head -n 1 output_ref3.csv && tail -n +2 output_ref3.csv | sort -t, -k6 -n) > sorted_output_ref3.csv");
+  system("(head -n 1 ../db/output_ref3.csv && tail -n +2 ../db/output_ref3.csv | sort -t, -k6 -n) > ../db/sorted_output_ref3.csv");
   // Descrição do comando:
   // sort: O comando para ordenar.
   // -t,: Define a vírgula (,) como delimitador de campo.

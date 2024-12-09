@@ -11,8 +11,7 @@ sudo apt install build-essential libomp-dev -y
 ## Clonar o repositório com os arquivos do projeto
 
 ```
-git clone xxxxxxxxxxxxxxx
-cd xxxxxxxxxxxxxxxx
+git clone https://github.com/NikollasAntes/CSC64_exame.git
 ```
 
 ## Compilação e execução
